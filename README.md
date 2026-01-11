@@ -426,7 +426,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 **Team Project** - Developed by a team of 4 dedicated members
 
-- 🌐 **Live Demo:** [StudyNotion EdTech Platform](https:#)
+- 🌐 **Live Demo:** [StudyNotion EdTech Platform](https://study-notion-ed-tech-two-neon.vercel.app/)
 - 💼 **GitHub Repository:** [@WANI-OWAIS/StudyNotion-EdTech](https://github.com/WANI-OWAIS/StudyNotion-EdTech)
 - 👥 **Team Size:** 4 Members
 - 📧 **Contact:** Open an issue on GitHub for support
