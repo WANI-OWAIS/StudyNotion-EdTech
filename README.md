@@ -1,442 +1,366 @@
 <div align="center">
 
-# 📚 StudyNotion - EdTech Platform
+# StudyNotion — EdTech Platform
 
-### _Empowering Education Through Technology_
+**A full-stack online education marketplace built with the MERN stack**
 
-[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://study-notion-zeta-lemon.vercel.app/)
-[![MERN Stack](https://img.shields.io/badge/Stack-MERN-blue.svg)](https://github.com/WANI-OWAIS/Study-Notion)
-[![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://study-notion-ed-tech-two-neon.vercel.app/)
+[![MERN Stack](https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge)](https://github.com/WANI-OWAIS/StudyNotion-EdTech)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 ![Main Page](images/mainpage.png)
-
-[✨ Features](#-key-features) • [🏗️ Architecture](#️-system-architecture) • [🚀 Quick Start](#-quick-start) • [📖 Documentation](#-api-documentation)
 
 </div>
 
 ---
 
-## 🎯 About The Project
+## Table of Contents
 
-**StudyNotion** is a comprehensive EdTech platform that revolutionizes online education by providing an interactive and seamless learning experience. Built with the **MERN stack** (MongoDB, Express.js, React.js, Node.js), it bridges the gap between instructors and learners worldwide.
-
-### 🌟 Why StudyNotion?
-
-- 🎓 **For Students**: Access quality educational content, track progress, and learn at your own pace
-- 👨‍🏫 **For Instructors**: Share expertise, create engaging courses, and build a global teaching brand
-- 💡 **For Everyone**: Interactive learning environment with real-time feedback and community engagement
-
----
-
-## ✨ Key Features
-
-### 👨‍🎓 Student Features
-
-- 🏠 **Homepage** - Discover trending courses and educational content
-- 📚 **Course Catalog** - Browse extensive course library with ratings and reviews
-- ❤️ **Wishlist** - Save courses for later
-- 🛒 **Shopping Cart** - Seamless course purchase experience
-- 📺 **Video Player** - High-quality video streaming with progress tracking
-- 👤 **Profile Management** - Customize your learning profile
-
-### 👨‍🏫 Instructor Features
-
-- 📊 **Analytics Dashboard** - Track course performance and student engagement
-- 📈 **Insights** - Detailed metrics on views, enrollments, and revenue
-- ✏️ **Course Management** - Create, edit, and delete courses with ease
-- 💰 **Revenue Tracking** - Monitor earnings and payment history
-- 🎬 **Content Upload** - Upload videos, documents, and multimedia content
-
-### 🔐 Security & Payments
-
-- 🔒 **Secure Authentication** - JWT-based authentication with OTP verification
-- 💳 **Payment Integration** - Razorpay integration for secure transactions
-- 🔑 **Password Recovery** - Forgot password with email verification
-- 🛡️ **Data Protection** - Bcrypt encryption for sensitive data
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [API Reference](#api-reference)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [Team](#team)
+- [License](#license)
 
 ---
 
-## 📋 Table of Contents
+## About
 
-- [🎯 About The Project](#-about-the-project)
-- [✨ Key Features](#-key-features)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [🏗️ System Architecture](#️-system-architecture)
-- [🚀 Quick Start](#-quick-start)
-- [⚙️ Configuration](#️-configuration)
-- [📖 API Documentation](#-api-documentation)
-- [📁 Project Structure](#-project-structure)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
+**StudyNotion** is a fully functional EdTech platform where instructors can create, manage, and sell courses while students can browse, purchase, and consume educational content. The platform handles authentication, payments, media uploads, course progress tracking, and ratings — all within a responsive, modern UI.
+
+Built by a team of 4 as a capstone project, it demonstrates production-grade patterns including JWT auth with OTP verification, Razorpay payment integration, Cloudinary media management, and a Redux-powered React frontend.
 
 ---
 
-## 🛠️ Tech Stack
+## Features
 
-### Frontend
+### Students
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- Browse and search the course catalog by category
+- Add courses to cart and purchase via Razorpay
+- Stream video lectures with progress tracking
+- Rate and review completed courses
+- Manage profile, password, and display picture
 
-### Backend
+### Instructors
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+- Create courses with sections, sub-sections, and video uploads
+- Edit, publish, and delete courses
+- View analytics dashboard — enrollments, revenue, course ratings
+- Manage profile and account settings
 
-### Additional Tools
+### Platform
 
-- **Cloudinary** - Media management and optimization
-- **Razorpay** - Payment gateway integration
-- **JWT** - Secure authentication
-- **Bcrypt** - Password encryption
-- **Mongoose** - MongoDB object modeling
-
----
-
-## 🏗️ System Architecture
-
-StudyNotion follows a **client-server architecture** with three main components working in harmony:
-
-### 🎨 Frontend Architecture
-
-Built with **React.js** for dynamic and responsive user interfaces, ensuring an engaging learning experience.
-
-<details>
-<summary><b>📄 Student Pages</b></summary>
-
-| Page                   | Description                                     |
-| ---------------------- | ----------------------------------------------- |
-| 🏠 **Homepage**        | Platform introduction with featured courses     |
-| 📚 **Course Catalog**  | Complete course library with search and filters |
-| ❤️ **Wishlist**        | Saved courses for future enrollment             |
-| 🛒 **Cart & Checkout** | Secure course purchase flow                     |
-| 📺 **Course Player**   | Video content with progress tracking            |
-| 👤 **Profile**         | Account management and settings                 |
-
-</details>
-
-<details>
-<summary><b>👨‍🏫 Instructor Pages</b></summary>
-
-| Page                  | Description                               |
-| --------------------- | ----------------------------------------- |
-| 📊 **Dashboard**      | Course overview with ratings and feedback |
-| 📈 **Analytics**      | Detailed metrics and insights             |
-| ✏️ **Course Manager** | Create, update, and delete courses        |
-| 💰 **Revenue**        | Earnings and payment history              |
-| 🎬 **Content Upload** | Media management interface                |
-
-</details>
-
-**Frontend Technologies:**
-
-- ⚛️ **React.js** - Component-based UI development
-- 🔄 **Redux** - State management
-- 🎨 **Tailwind CSS** - Utility-first styling
-- 📡 **Axios** - API communication
+- OTP-based email verification on signup
+- JWT authentication with role-based access (Student / Instructor / Admin)
+- Forgot-password flow with secure reset tokens
+- Admin-only category management
+- Responsive design — works across desktop, tablet, and mobile
 
 ---
 
-### ⚙️ Backend Architecture
+## Tech Stack
 
-Powered by **Node.js** and **Express.js**, providing robust RESTful APIs for all platform operations.
+| Layer         | Technologies                                                                    |
+| ------------- | ------------------------------------------------------------------------------- |
+| **Frontend**  | React 18, Redux Toolkit, React Router v6, Tailwind CSS, Swiper, Chart.js, Axios |
+| **Backend**   | Node.js, Express.js, Mongoose (MongoDB), JWT, Bcrypt                            |
+| **Database**  | MongoDB Atlas                                                                   |
+| **Payments**  | Razorpay                                                                        |
+| **Media**     | Cloudinary                                                                      |
+| **Email**     | Nodemailer (Gmail SMTP)                                                         |
+| **Dev Tools** | Concurrently, Nodemon                                                           |
 
-#### 🔑 Core Features
+---
 
-```mermaid
-graph LR
-    A[Authentication] --> B[Course Management]
-    B --> C[Payment Processing]
-    C --> D[Media Storage]
-    D --> E[Rating System]
+## Architecture
+
+StudyNotion follows a standard **client-server** architecture:
+
+```
+┌─────────────┐       REST API        ┌──────────────┐       ODM         ┌──────────────┐
+│   React.js  │  ◄────────────────►   │  Express.js  │  ◄─────────────►  │  MongoDB     │
+│  (Frontend) │    JSON / HTTP         │  (Backend)   │    Mongoose       │  Atlas       │
+└─────────────┘                        └──────┬───────┘                   └──────────────┘
+                                              │
+                                    ┌─────────┼─────────┐
+                                    │         │         │
+                              Cloudinary  Razorpay  Nodemailer
+                              (Media)     (Payments) (Email)
 ```
 
-| Feature               | Implementation                       |
-| --------------------- | ------------------------------------ |
-| 🔐 **Authentication** | JWT tokens with OTP verification     |
-| 📚 **Course CRUD**    | Complete course lifecycle management |
-| 💳 **Payments**       | Razorpay integration with webhooks   |
-| ☁️ **Media Storage**  | Cloudinary for optimized delivery    |
-| ⭐ **Ratings**        | Real-time course feedback system     |
+![Architecture Diagram](images/architecture.png)
 
-#### 🧰 Backend Stack
+### Database Schema
 
-- **Node.js** - Runtime environment
-- **Express.js** - Web application framework
-- **MongoDB** - NoSQL database
-- **Mongoose** - ODM for MongoDB
-- **JWT** - Token-based authentication
-- **Bcrypt** - Password hashing
-- **Cloudinary** - Cloud media management
-- **Razorpay** - Payment gateway
+The data layer is built on 9 Mongoose models:
 
----
-
-### 🗄️ Database Design
-
-**MongoDB** provides flexible, scalable data storage with the following schemas:
-
-<details>
-<summary><b>📊 Data Models</b></summary>
-
-#### User Schema
-
-```javascript
-{
-  name, email, password (hashed),
-  accountType: [Student, Instructor],
-  profile: { about, dateOfBirth, gender, contactNumber },
-  courses: [courseId],
-  courseProgress: [progressId]
-}
-```
-
-#### Course Schema
-
-```javascript
-{
-  courseName, courseDescription,
-  instructor: instructorId,
-  whatYouWillLearn,
-  courseContent: [sectionId],
-  ratingAndReviews: [reviewId],
-  price, thumbnail,
-  studentsEnrolled: [studentId]
-}
-```
-
-#### Section & Subsection Schema
-
-```javascript
-Section: { sectionName, subSections: [subSectionId] }
-SubSection: { title, description, videoUrl, duration }
-```
-
-</details>
+| Model               | Purpose                                                                 |
+| ------------------- | ----------------------------------------------------------------------- |
+| **User**            | Stores credentials, account type, and references to Profile and Courses |
+| **Profile**         | Extended user info — bio, DOB, gender, contact                          |
+| **Course**          | Course metadata, instructor ref, sections, ratings, enrolled students   |
+| **Section**         | Groups of sub-sections within a course                                  |
+| **SubSection**      | Individual video lectures with title, description, video URL, duration  |
+| **Category**        | Course categories for catalog browsing                                  |
+| **RatingAndReview** | Student ratings (1-5) and text reviews per course                       |
+| **CourseProgress**  | Tracks completed sub-sections per student per course                    |
+| **OTP**             | Time-limited OTP records for email verification                         |
 
 ![Database Schema](images/schema.png)
 
 ---
 
-### 🏛️ Architecture Diagram
-
-Below is the high-level system architecture:
-
-![Architecture](images/architecture.png)
-
----
-
-## 📖 API Documentation
-
-The StudyNotion API follows **RESTful** design principles with JSON data exchange and standard HTTP methods.
-
-### 🔌 API Endpoints Overview
-
-<details>
-<summary><b>Authentication APIs</b></summary>
-
-- `POST /api/auth/signup` - Register new user
-- `POST /api/auth/login` - User login
-- `POST /api/auth/verify-otp` - OTP verification
-- `POST /api/auth/forgot-password` - Password reset request
-- `POST /api/auth/reset-password` - Reset password
-
-</details>
-
-<details>
-<summary><b>Course APIs</b></summary>
-
-- `GET /api/courses` - Get all courses
-- `GET /api/courses/:id` - Get course details
-- `POST /api/courses` - Create course (Instructor)
-- `PUT /api/courses/:id` - Update course (Instructor)
-- `DELETE /api/courses/:id` - Delete course (Instructor)
-
-</details>
-
-<details>
-<summary><b>Payment APIs</b></summary>
-
-- `POST /api/payment/capture` - Capture payment
-- `POST /api/payment/verify` - Verify payment signature
-
-</details>
-
-For comprehensive API documentation, visit the [API Documentation](/api-docs).
-
----
-
-## 🚀 Quick Start
+## Getting Started
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
+- **Node.js** v16+ and **npm**
+- **MongoDB** (local or [MongoDB Atlas](https://www.mongodb.com/atlas))
+- **Cloudinary** account (free tier works)
+- **Razorpay** account (test mode)
+- **Gmail App Password** for email
 
-- **Node.js** (v14 or higher)
-- **npm** or **yarn**
-- **MongoDB** (local or Atlas)
-- **Git**
-
-### 📥 Installation
+### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/WANI-OWAIS/Study-Notion.git
+# 1. Clone the repo
+git clone https://github.com/WANI-OWAIS/StudyNotion-EdTech.git
+cd StudyNotion-EdTech
 
-# Navigate to project directory
-cd Study-Notion
-
-# Install root dependencies
+# 2. Install frontend dependencies
 npm install
 
-# Install server dependencies
+# 3. Install backend dependencies
 cd server
 npm install
-
-# Return to root and install client dependencies
 cd ..
-npm install
 ```
 
----
-
-## ⚙️ Configuration
-
-### 1️⃣ Database Setup
-
-Create a MongoDB database (local or MongoDB Atlas) and obtain your connection string.
-
-### 2️⃣ Environment Variables
-
-Create a `.env` file in the **server** directory:
-
-```env
-# Database
-MONGODB_URL=your_mongodb_connection_string
-
-# JWT Secret
-JWT_SECRET=your_jwt_secret_key
-
-# Cloudinary Configuration
-CLOUD_NAME=your_cloudinary_cloud_name
-API_KEY=your_cloudinary_api_key
-API_SECRET=your_cloudinary_api_secret
-
-# Razorpay Configuration
-RAZORPAY_KEY=your_razorpay_key_id
-RAZORPAY_SECRET=your_razorpay_secret
-
-# Mail Configuration
-MAIL_HOST=smtp.gmail.com
-MAIL_USER=your_email@gmail.com
-MAIL_PASS=your_email_password
-
-# Frontend URL
-REACT_APP_BASE_URL=http://localhost:4000/api/v1
-```
-
-### 3️⃣ Frontend Configuration
-
-Create a `.env` file in the **root** directory:
-
-```env
-REACT_APP_BASE_URL=http://localhost:4000/api/v1
-```
-
----
-
-## 🎮 Usage
-
-### Development Mode
+### Running Locally
 
 ```bash
-# Start the backend server (from root directory)
-cd server
+# Option 1: Start both frontend and backend concurrently
 npm run dev
 
-# Start the frontend (open new terminal from root directory)
+# Option 2: Start separately
+# Terminal 1 — Backend
+cd server && npm run dev
+
+# Terminal 2 — Frontend
 npm start
 ```
 
-The application will be available at:
-
-- **Frontend:** `http://localhost:3000`
-- **Backend:** `http://localhost:4000`
+| Service     | URL                          |
+| ----------- | ---------------------------- |
+| Frontend    | http://localhost:3000        |
+| Backend API | http://localhost:4000/api/v1 |
 
 ### Production Build
 
 ```bash
-# Build frontend for production
-npm run build
-
-# Start production server
-cd server
-npm start
+npm run build        # Generates optimized frontend in /build
+cd server && npm start  # Starts production server
 ```
 
 ---
 
-## 📁 Project Structure
+## Environment Variables
+
+### Server (`server/.env`)
+
+```env
+# MongoDB
+MONGODB_URL=mongodb+srv://<user>:<pass>@cluster.mongodb.net/<dbname>
+
+# JWT
+JWT_SECRET=your_jwt_secret
+
+# Cloudinary
+CLOUD_NAME=your_cloud_name
+API_KEY=your_api_key
+API_SECRET=your_api_secret
+FOLDER_NAME=StudyNotion
+
+# Razorpay
+RAZORPAY_KEY=your_razorpay_key
+RAZORPAY_SECRET=your_razorpay_secret
+
+# Email (Gmail SMTP)
+MAIL_HOST=smtp.gmail.com
+MAIL_USER=your_email@gmail.com
+MAIL_PASS=your_app_password
+
+# Server
+PORT=4000
+```
+
+### Frontend (`.env` in root)
+
+```env
+REACT_APP_BASE_URL=http://localhost:4000/api/v1
+```
+
+---
+
+## API Reference
+
+All endpoints are prefixed with `/api/v1`.
+
+### Authentication — `/api/v1/auth`
+
+| Method | Endpoint                | Auth | Description                 |
+| ------ | ----------------------- | ---- | --------------------------- |
+| POST   | `/signup`               | —    | Register a new user         |
+| POST   | `/login`                | —    | Login and receive JWT       |
+| POST   | `/sendotp`              | —    | Send OTP to email           |
+| POST   | `/changepassword`       | JWT  | Change password             |
+| POST   | `/reset-password-token` | —    | Request password reset link |
+| POST   | `/reset-password`       | —    | Reset password with token   |
+
+### Courses — `/api/v1/course`
+
+| Method | Endpoint                | Auth       | Description                        |
+| ------ | ----------------------- | ---------- | ---------------------------------- |
+| GET    | `/getAllCourses`        | —          | List all courses                   |
+| POST   | `/getCourseDetails`     | —          | Get public course details          |
+| POST   | `/getFullCourseDetails` | JWT        | Get full course details (enrolled) |
+| POST   | `/createCourse`         | Instructor | Create a new course                |
+| POST   | `/editCourse`           | Instructor | Update course details              |
+| DELETE | `/deleteCourse`         | —          | Delete a course                    |
+| GET    | `/getInstructorCourses` | Instructor | Get instructor's courses           |
+| POST   | `/addSection`           | Instructor | Add section to course              |
+| POST   | `/updateSection`        | Instructor | Update section                     |
+| POST   | `/deleteSection`        | Instructor | Delete section                     |
+| POST   | `/addSubSection`        | Instructor | Add sub-section                    |
+| POST   | `/updateSubSection`     | Instructor | Update sub-section                 |
+| POST   | `/deleteSubSection`     | Instructor | Delete sub-section                 |
+| POST   | `/updateCourseProgress` | Student    | Mark sub-section complete          |
+| POST   | `/createRating`         | Student    | Submit rating & review             |
+| GET    | `/getAverageRating`     | —          | Get average rating for a course    |
+| GET    | `/getReviews`           | —          | Get all reviews                    |
+
+### Categories — `/api/v1/course`
+
+| Method | Endpoint                  | Auth  | Description               |
+| ------ | ------------------------- | ----- | ------------------------- |
+| POST   | `/createCategory`         | Admin | Create category           |
+| GET    | `/showAllCategories`      | —     | List all categories       |
+| POST   | `/getCategoryPageDetails` | —     | Get category with courses |
+
+### Payments — `/api/v1/payment`
+
+| Method | Endpoint                   | Auth    | Description               |
+| ------ | -------------------------- | ------- | ------------------------- |
+| POST   | `/capturePayment`          | Student | Initiate payment          |
+| POST   | `/verifyPayment`           | Student | Verify Razorpay signature |
+| POST   | `/sendPaymentSuccessEmail` | Student | Send confirmation email   |
+
+### Profile — `/api/v1/profile`
+
+| Method | Endpoint                | Auth       | Description             |
+| ------ | ----------------------- | ---------- | ----------------------- |
+| GET    | `/getUserDetails`       | JWT        | Get user details        |
+| PUT    | `/updateProfile`        | JWT        | Update profile info     |
+| PUT    | `/updateDisplayPicture` | JWT        | Upload profile picture  |
+| DELETE | `/deleteProfile`        | JWT        | Delete account          |
+| GET    | `/getEnrolledCourses`   | JWT        | Get enrolled courses    |
+| GET    | `/instructorDashboard`  | Instructor | Get dashboard analytics |
+
+### Contact — `/api/v1/reach`
+
+| Method | Endpoint   | Auth | Description         |
+| ------ | ---------- | ---- | ------------------- |
+| POST   | `/contact` | —    | Submit contact form |
+
+---
+
+## Project Structure
 
 ```
-StudyNotion/
-├── 📂 public/              # Static files
-├── 📂 server/              # Backend code
-│   ├── 📂 config/          # Configuration files
-│   ├── 📂 controllers/     # Route controllers
-│   ├── 📂 models/          # Database models
-│   ├── 📂 routes/          # API routes
-│   ├── 📂 middlewares/     # Custom middlewares
-│   ├── 📂 utils/           # Utility functions
-│   └── 📄 index.js         # Server entry point
-├── 📂 src/                 # Frontend source
-│   ├── 📂 components/      # React components
-│   ├── 📂 pages/           # Page components
-│   ├── 📂 services/        # API services
-│   ├── 📂 slices/          # Redux slices
-│   ├── 📂 utils/           # Helper functions
-│   └── 📄 App.js           # Main App component
-├── 📄 package.json         # Dependencies
-└── 📄 README.md            # Documentation
+StudyNotion-EdTech/
+├── public/                     # Static HTML entry point
+├── images/                     # README screenshots
+├── server/                     # ── Backend ──
+│   ├── index.js                # Express app setup & server start
+│   ├── config/                 # DB, Cloudinary, Razorpay config
+│   ├── controllers/            # Route handlers
+│   │   ├── Auth.js             # Signup, login, OTP, password
+│   │   ├── Course.js           # Course CRUD
+│   │   ├── Category.js         # Category CRUD & catalog
+│   │   ├── Section.js          # Section management
+│   │   ├── Subsection.js       # Sub-section management
+│   │   ├── Payments.js         # Razorpay capture & verify
+│   │   ├── Profile.js          # Profile & dashboard
+│   │   ├── RatingAndReview.js  # Ratings & reviews
+│   │   ├── ResetPassword.js    # Password reset flow
+│   │   ├── ContactUs.js        # Contact form handler
+│   │   └── courseProgress.js   # Progress tracking
+│   ├── models/                 # Mongoose schemas (9 models)
+│   ├── routes/                 # Express route definitions
+│   ├── middlewares/auth.js     # JWT verification & role guards
+│   ├── mail/templates/         # Email HTML templates
+│   └── utils/                  # Helpers (mailer, uploader, etc.)
+├── src/                        # ── Frontend ──
+│   ├── App.js                  # Root component & routes
+│   ├── index.js                # React entry point
+│   ├── components/
+│   │   ├── common/             # Navbar, Footer, ReviewSlider, etc.
+│   │   ├── core/               # Feature components (Auth, Dashboard, Course, etc.)
+│   │   └── ContactPage/        # Contact form components
+│   ├── pages/                  # Route-level page components
+│   ├── slices/                 # Redux Toolkit slices
+│   ├── services/               # API connector & operation functions
+│   ├── hooks/                  # Custom React hooks
+│   ├── data/                   # Static data (nav links, footer links, etc.)
+│   ├── assets/                 # Images & logos
+│   └── utils/                  # Constants & formatters
+├── package.json                # Frontend dependencies & scripts
+├── tailwind.config.js          # Tailwind CSS configuration
+└── README.md
 ```
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+1. **Fork** the repository
+2. **Create** a feature branch — `git checkout -b feature/your-feature`
+3. **Commit** your changes — `git commit -m "Add your feature"`
+4. **Push** to the branch — `git push origin feature/your-feature`
+5. **Open** a Pull Request
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+Please ensure your code follows the existing patterns and includes meaningful commit messages.
 
 ---
 
-## 📞 Contact & Support
+## Team
 
-**Team Project** - Developed by a team of 4 dedicated members
+Developed by **Team J&K** — a group of 4 members.
 
-- 🌐 **Live Demo:** [StudyNotion EdTech Platform](https://study-notion-ed-tech-two-neon.vercel.app/)
-- 💼 **GitHub Repository:** [@WANI-OWAIS/StudyNotion-EdTech](https://github.com/WANI-OWAIS/StudyNotion-EdTech)
-- 👥 **Team Size:** 4 Members
-- 📧 **Contact:** Open an issue on GitHub for support
+- GitHub: [@WANI-OWAIS](https://github.com/WANI-OWAIS)
+- Live Demo: [studynotion-edtech.vercel.app](https://study-notion-ed-tech-two-neon.vercel.app/)
+
+For questions or support, [open an issue](https://github.com/WANI-OWAIS/StudyNotion-EdTech/issues).
+
+---
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
 
-### ⭐ Star this repository if you find it helpful!
+**If you found this project useful, consider giving it a star!**
 
-Made with ❤️ Team J&K © 2025 Studynotion
+Made with care by Team J&K &copy; 2025
 
 </div>

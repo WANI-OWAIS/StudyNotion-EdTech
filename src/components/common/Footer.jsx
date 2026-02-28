@@ -1,6 +1,5 @@
 import React from "react";
 import { FooterLink2 } from "../../data/footer-links";
-import { Link } from "react-router-dom";
 
 // Images
 import Logo from "../../assets/Logo/Logo-Full-Light.png";
@@ -41,7 +40,7 @@ const Footer = () => {
                       key={i}
                       className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
                     >
-                      <Link to={ele.toLowerCase()}>{ele}</Link>
+                      {ele}
                     </div>
                   );
                 })}
@@ -67,9 +66,7 @@ const Footer = () => {
                       key={index}
                       className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
                     >
-                      <Link to={ele.split(" ").join("-").toLowerCase()}>
-                        {ele}
-                      </Link>
+                      {ele}
                     </div>
                   );
                 })}
@@ -79,7 +76,7 @@ const Footer = () => {
                 Support
               </h1>
               <div className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200 mt-2">
-                <Link to={"/help-center"}>Help Center</Link>
+                Help Center
               </div>
             </div>
 
@@ -95,9 +92,7 @@ const Footer = () => {
                       key={index}
                       className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
                     >
-                      <Link to={ele.split(" ").join("-").toLowerCase()}>
-                        {ele}
-                      </Link>
+                      {ele}
                     </div>
                   );
                 })}
@@ -113,9 +108,7 @@ const Footer = () => {
                       key={index}
                       className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
                     >
-                      <Link to={ele.split(" ").join("-").toLowerCase()}>
-                        {ele}
-                      </Link>
+                      {ele}
                     </div>
                   );
                 })}
@@ -138,7 +131,7 @@ const Footer = () => {
                           key={index}
                           className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
                         >
-                          <Link to={link.link}>{link.title}</Link>
+                          {link.title}
                         </div>
                       );
                     })}
@@ -164,15 +157,15 @@ const Footer = () => {
                       : "border-r border-richblack-700 cursor-pointer hover:text-richblack-50 transition-all duration-200"
                   } px-3 `}
                 >
-                  <Link to={ele.split(" ").join("-").toLocaleLowerCase()}>
-                    {ele}
-                  </Link>
+                  {ele}
                 </div>
               );
             })}
           </div>
 
-          <div className="text-center">Made with ❤️ Team J&K © 2025 Studynotion</div>
+          <div className="text-center">
+            Made with ❤️ Team J&K © 2025 Studynotion
+          </div>
         </div>
       </div>
     </div>
