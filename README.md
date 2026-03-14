@@ -345,7 +345,7 @@ Please ensure your code follows the existing patterns and includes meaningful co
 Developed by **Team J&K** — a group of 4 members.
 
 - GitHub: [@WANI-OWAIS](https://github.com/WANI-OWAIS)
-- Live Demo: [studynotion-edtech.vercel.app](https://study-notion-ed-tech-two-neon.vercel.app/)
+- Live Demo: [studynotion-edtech.vercel.app](https://study-notion-ed-tech-livid.vercel.app/)
 
 For questions or support, [open an issue](https://github.com/WANI-OWAIS/StudyNotion-EdTech/issues).
 
