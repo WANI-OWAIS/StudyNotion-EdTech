@@ -4,7 +4,7 @@
 
 **A full-stack online education marketplace built with the MERN stack**
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://study-notion-ed-tech-two-neon.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://study-notion-ed-tech-livid.vercel.app/)
 [![MERN Stack](https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge)](https://github.com/WANI-OWAIS/StudyNotion-EdTech)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
