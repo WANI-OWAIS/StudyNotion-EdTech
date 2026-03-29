@@ -19,6 +19,7 @@ function Navbar() {
 
   const [subLinks, setSubLinks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -41,7 +42,7 @@ function Navbar() {
 
   return (
     <div
-      className={`flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ${
+      className={`relative flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ${
         location.pathname !== "/" ? "bg-richblack-800" : ""
       } transition-all duration-200`}
     >
@@ -136,9 +137,98 @@ function Navbar() {
           )}
           {token !== null && <ProfileDropdown />}
         </div>
-        <button className="mr-4 md:hidden">
+        <button
+          className="mr-4 md:hidden"
+          onClick={() => setOpenMenu(!openMenu)}
+        >
           <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
         </button>
+        {/* Mobile Menu */}
+        {openMenu && (
+          <div className="absolute top-full left-0 right-0 w-screen bg-richblack-800 border-b border-richblack-700 md:hidden shadow-lg z-50">
+            <nav className="flex flex-col gap-2 p-4">
+              <ul className="flex flex-col gap-y-4 text-richblack-25">
+                {NavbarLinks.map((link, index) => (
+                  <li key={index}>
+                    {link.title === "Catalog" ? (
+                      <div className="flex flex-col gap-2">
+                        <p className="text-richblack-25 font-medium">
+                          {link.title}
+                        </p>
+                        {loading ? (
+                          <p className="text-sm text-richblack-100">
+                            Loading...
+                          </p>
+                        ) : subLinks && subLinks.length ? (
+                          <div className="flex flex-col gap-2 pl-4">
+                            {subLinks?.map((subLink, i) => (
+                              <Link
+                                to={`/catalog/${subLink.name
+                                  .split(" ")
+                                  .join("-")
+                                  .toLowerCase()}`}
+                                key={i}
+                                onClick={() => setOpenMenu(false)}
+                                className="text-richblack-100 text-sm hover:text-yellow-25"
+                              >
+                                {subLink.name}
+                              </Link>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-richblack-100">
+                            No Courses Found
+                          </p>
+                        )}
+                      </div>
+                    ) : (
+                      <Link to={link?.path} onClick={() => setOpenMenu(false)}>
+                        <p className="text-richblack-25 font-medium hover:text-yellow-25">
+                          {link.title}
+                        </p>
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              {/* Mobile Auth Section */}
+              <div className="flex flex-col gap-3 mt-4 border-t border-richblack-700 pt-4">
+                {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
+                  <Link
+                    to="/dashboard/cart"
+                    onClick={() => setOpenMenu(false)}
+                    className="relative"
+                  >
+                    <div className="flex items-center gap-2 text-richblack-100 hover:text-yellow-25">
+                      <AiOutlineShoppingCart className="text-xl" />
+                      <span>Cart</span>
+                      {totalItems > 0 && (
+                        <span className="ml-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100">
+                          {totalItems}
+                        </span>
+                      )}
+                    </div>
+                  </Link>
+                )}
+                {token === null && (
+                  <Link to="/login" onClick={() => setOpenMenu(false)}>
+                    <button className="w-full rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 hover:bg-richblack-700">
+                      Log in
+                    </button>
+                  </Link>
+                )}
+                {token === null && (
+                  <Link to="/signup" onClick={() => setOpenMenu(false)}>
+                    <button className="w-full rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 hover:bg-richblack-700">
+                      Sign up
+                    </button>
+                  </Link>
+                )}
+                {token !== null && <ProfileDropdown />}
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
     </div>
   );
